@@ -11,7 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<RecrutamentoDBContext>(options =>
 {
-    options.UseNpgsql("Host=localhost;Database=recruitment;Username=Postgres;Password=adminpass");
+    options.UseNpgsql("Host=localhost;Database=recruitment;Username=postgres;Password=adminpass");
 });
 var app = builder.Build();
 app.UseCors((options) =>
