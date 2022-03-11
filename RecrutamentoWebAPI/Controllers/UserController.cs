@@ -19,7 +19,7 @@ namespace RecrutamentoWebAPI.Controllers
         public IActionResult GetUserData(int id)
         {
             var user = _dbContext.UserList.FirstOrDefault(user => user.Id == id);
-            if(user == null)
+            if (user == null)
                 return NotFound($"Não existe um utilizador com o id: {id}");
             return Ok(user);
         }
@@ -32,6 +32,11 @@ namespace RecrutamentoWebAPI.Controllers
         [HttpPost()]
         public IActionResult CreateUser(User user)
         {
+            var userEmail = _dbContext.UserList.FirstOrDefault(userDb => userDb.Email == user.Email);
+            if (userEmail != null)
+                return BadRequest("Email já registado, Insira outro email.");
+
+
             var userEntity = new RecrutamentoBackend.Database.Entities.User
             {
                 Name = user.Name,
@@ -43,7 +48,9 @@ namespace RecrutamentoWebAPI.Controllers
 
             _dbContext.Add(userEntity);
             _dbContext.SaveChanges();
+
             return Ok(user);
+
         }
     }
 }
