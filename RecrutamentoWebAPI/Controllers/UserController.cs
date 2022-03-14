@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RecrutamentoBackend.Database.Configs;
+using RecrutamentoWebAPI.Mappings;
 using RecrutamentoWebAPI.Models;
 using System.Linq;
 
@@ -32,19 +33,15 @@ namespace RecrutamentoWebAPI.Controllers
         [HttpPost()]
         public IActionResult CreateUser(User user)
         {
+            //validate email
             var userEmail = _dbContext.UserList.FirstOrDefault(userDb => userDb.Email == user.Email);
             if (userEmail != null)
-                return BadRequest("Email já registado, Insira outro email.");
+                return BadRequest("Email already registered, enter another.");
 
 
-            var userEntity = new RecrutamentoBackend.Database.Entities.User
-            {
-                Name = user.Name,
-                Email = user.Email,
-                Number = user.Number,
-                Interests = user.Interests,
-                Message = user.Message
-            };
+            //persists on database         
+            var userEntity = UserMapping.ToEntity(user);
+            
 
             _dbContext.Add(userEntity);
             _dbContext.SaveChanges();
