@@ -5,7 +5,9 @@ VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecrutamentoWebAPI", "RecrutamentoWebAPI\RecrutamentoWebAPI.csproj", "{0F6AB1BB-3F31-42A0-A867-26B79302C82C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecrutamentoBackend.Database", "RecrutamentoBackend.Database\RecrutamentoBackend.Database.csproj", "{F78C6C92-CA58-45EC-AD8E-D90F83D29AEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecrutamentoBackend.Database", "RecrutamentoBackend.Database\RecrutamentoBackend.Database.csproj", "{F78C6C92-CA58-45EC-AD8E-D90F83D29AEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecrutamentoBackend.Test", "RecrutamentoBackend.Test\RecrutamentoBackend.Test.csproj", "{683A97A3-49BA-4F7E-8B7E-D88617F011EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{F78C6C92-CA58-45EC-AD8E-D90F83D29AEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F78C6C92-CA58-45EC-AD8E-D90F83D29AEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F78C6C92-CA58-45EC-AD8E-D90F83D29AEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{683A97A3-49BA-4F7E-8B7E-D88617F011EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{683A97A3-49BA-4F7E-8B7E-D88617F011EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{683A97A3-49BA-4F7E-8B7E-D88617F011EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{683A97A3-49BA-4F7E-8B7E-D88617F011EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
